@@ -17,8 +17,8 @@ if(isset($_FILES['file'])) {
 	if (isset($_POST['submit'])) {
 		if(isset($_POST['radio']))
 		{
-			echo "Selected: ".$_POST['radio'];
-			echo "</br>";   //  Displaying Selected Value
+			echo "Selected: ".$_POST['radio'];  //  Displaying Selected Value
+			echo "</br>";  
 		}
 	}
 	
@@ -35,7 +35,7 @@ if(isset($_FILES['file'])) {
 					$file_destination;
 				}
 				else {
-					echo "Not moved";
+					echo "</br>Not moved";
 				}
 
 			}
