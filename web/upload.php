@@ -17,12 +17,12 @@ if(isset($_FILES['file'])) {
 	// Functions
 	function crew212Parser() { //Need to pass in file
 		echo "Crew212 selected </br>";
-		echo $file_name
+		echo $file_name;
 	}
 
 	function seniorParser() {
 		echo "Senior selected </br>";
-		echo $file_name
+		echo $file_name;
 	}
 	
 	// Deal with radio button
@@ -30,10 +30,10 @@ if(isset($_FILES['file'])) {
 		if(isset($_POST['radio']))
 		{
 			if($_POST['radio'] == "Crew212") {
-				//echo "Crew212 selected </br>";
+				echo "IF: Crew212 selected </br>";
 			}
 			elseif($_POST['radio'] == "Senior") {
-				//echo "Senior selected </br>";
+				echo "IF: Senior selected </br>";
 			}
 
 			//echo "Selected: ".$_POST['radio']."</br>";  //  Displaying Selected Value
