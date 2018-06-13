@@ -13,7 +13,14 @@ if(isset($_FILES['file'])) {
 	$file_ext = strtolower(end($file_ext));
 
 	$allowed = array('txt', 'jpg', 'docx');
-
+	
+	if (isset($_POST['submit'])) {
+		if(isset($_POST['radio']))
+		{
+			echo "Selected: ".$_POST['radio'] " ===== ";  //  Displaying Selected Value
+		}
+	}
+	
 	if(in_array($file_ext, $allowed)) {
 		if($file_error === 0) {
 			if($file_size <= 2097152) {
@@ -38,12 +45,3 @@ if(isset($_FILES['file'])) {
 	}
 }
 ?>
-
-<?php
-			if (isset($_POST['submit'])) {
-			if(isset($_POST['radio']))
-			{
-				echo "Selected: ".$_POST['radio'];  //  Displaying Selected Value
-			}
-			}
-		?>
