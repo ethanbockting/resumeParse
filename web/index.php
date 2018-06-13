@@ -1,6 +1,5 @@
 <html>
-<?php echo "hello world"; ?>
-<?php echo "hello hello world"; ?>
+<?php echo "Hello! Please select which environment you are testing"; ?>
     <head><meta charset="UTF-8"></head>
     <body>
         <form action="index.php" method="post">
