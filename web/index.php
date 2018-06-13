@@ -3,12 +3,12 @@
 <?php echo "hello hello world"; ?>
     <head><meta charset="UTF-8"></head>
     <body>
-       <form action="accept-file.php" method="post" enctype="multipart/form-data">
+       <form action="index.php" method="post" enctype="multipart/form-data">
 	        Your Photo: <input type="file" name="photo" size="25" />
 	        <input type="submit" name="submit" value="Submit" />
         </form>
-	 //if they DID upload a file...
-<?if($_FILES['photo']['name'])
+	<? //if they DID upload a file...
+if($_FILES['photo']['name'])
 {
 	//if no errors...
 	if(!$_FILES['photo']['error'])
