@@ -26,6 +26,9 @@ if(isset($_FILES['file'])) {
 				if(move_uploaded_file($file_tmp, $file_destination)) {
 					$file_destination;
 				}
+				else {
+					echo "no sir";
+				}
 
 			}
 		}
