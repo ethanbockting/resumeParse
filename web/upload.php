@@ -43,7 +43,7 @@ if(isset($_FILES['file'])) {
 			if (isset($_POST['submit'])) {
 			if(isset($_POST['radio']))
 			{
-				echo "Selected".$_POST['radio'] "\n";  //  Displaying Selected Value
+				echo "Selected: ".$_POST['radio'] "\n";  //  Displaying Selected Value
 			}
 			}
 		?>
