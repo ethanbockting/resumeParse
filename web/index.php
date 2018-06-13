@@ -14,6 +14,7 @@
 			{
 				echo "You have selected :".$_POST['radio'];  //  Displaying Selected Value
 			}
+			}
 		?>
     </body>
 </html>
