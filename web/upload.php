@@ -17,7 +17,7 @@ if(isset($_FILES['file'])) {
 	if (isset($_POST['submit'])) {
 		if(isset($_POST['radio']))
 		{
-			echo "Selected: ".$_POST['radio'] " ===== ";  //  Displaying Selected Value
+			echo "Selected: ".$_POST['radio'];  //  Displaying Selected Value
 		}
 	}
 	
