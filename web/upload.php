@@ -27,14 +27,14 @@ if(isset($_FILES['file'])) {
 					$file_destination;
 				}
 				else {
-					echo "no sir";
+					echo "Not moved";
 				}
 
 			}
 		}
 	}
 	else{
-		echo "nope";
+		echo "No File Found";
 	}
 }
 ?>
