@@ -24,7 +24,7 @@ if(isset($_FILES['file'])) {
 				$file_destination = 'uploads/' . $file_name_new;
 
 				if(move_uploaded_file($file_tmp, $file_destination)) {
-					echo $file_destination;
+					$file_destination;
 				}
 
 			}
