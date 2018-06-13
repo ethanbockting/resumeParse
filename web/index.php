@@ -3,12 +3,7 @@
 <?php echo "hello hello world"; ?>
     <head><meta charset="UTF-8"></head>
     <body>
-       <form action="index.php" method="post" enctype="multipart/form-data">
-	        Your Photo: <input type="file" name="photo" size="25" />
-	        <input type="submit" name="submit" value="Submit" />
-        </form>
-
-        <form action="" method="post">
+        <form action="index.php" method="post">
 			<input type="radio" name="radio" value="Crew212">Crew212
 			<input type="radio" name="radio" value="Senior">Senior
 			<input type="submit" name="submit" value="Get Selected Values" />
