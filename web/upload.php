@@ -13,12 +13,30 @@ if(isset($_FILES['file'])) {
 	$file_ext = strtolower(end($file_ext));
 
 	$allowed = array('txt', 'jpg', 'docx');
+
+	// Functions
+	function crew212Parser() { //Need to pass in file
+		echo "Crew212 selected </br>";
+		echo $file_name
+	}
+
+	function seniorParser() {
+		echo "Senior selected </br>";
+		echo $file_name
+	}
 	
+	// Deal with radio button
 	if (isset($_POST['submit'])) {
 		if(isset($_POST['radio']))
 		{
-			echo "Selected: ".$_POST['radio'];  //  Displaying Selected Value
-			echo "</br>";  
+			if($_POST['radio'] == "Crew212") {
+				//echo "Crew212 selected </br>";
+			}
+			elseif($_POST['radio'] == "Senior") {
+				//echo "Senior selected </br>";
+			}
+
+			//echo "Selected: ".$_POST['radio']."</br>";  //  Displaying Selected Value
 		}
 	}
 	
