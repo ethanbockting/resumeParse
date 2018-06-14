@@ -11,7 +11,6 @@ require $_SERVER['DOCUMENT_ROOT'].'/web/PHPMailer/src/SMTP.php';
 
 public class EmailSending()
 {
-	echo "constructor called";
 		// these should all be strings my doods
 	public function SendEmail($from, $to, $fromName, $body, $subject, $file)
 	{
