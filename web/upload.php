@@ -21,7 +21,7 @@ if(isset($_FILES['file'])) {
 		include 'crew212.php';
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
-		sendEmail("crew212");
+		sendEmail("crew212", $file);
 
 	}
 
@@ -29,11 +29,15 @@ if(isset($_FILES['file'])) {
 		include 'senior.php';
 		//echo "FUNCT: Senior selected </br>";
 		//echo $file_name;
-		sendEmail("senior");
+		sendEmail("senior", $file);
 	}
 
-	function sendEmail($environment) {
+	function sendEmail($environment, $file) {
 		echo $environment." email sent </br>";
+		include 'SendEmail.php';
+		//$email = new EmailSending();
+		//$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		
 	}
 	
 	// Deal with radio button
@@ -60,7 +64,7 @@ if(isset($_FILES['file'])) {
 				echo $file_name_new = $file_name;
 
 				//where the file is headed
-				$file_destination = 'uploads/' . $file_name_new;
+				$file_destination = 'documents/' . $file_name_new;
 
 				if(move_uploaded_file($file_tmp, $file_destination)) {
 					$file_destination;
@@ -70,6 +74,9 @@ if(isset($_FILES['file'])) {
 				}
 
 			}
+		    else {
+		    	echo "There was a file error";
+		    }
 		}
 	}
 	else{
