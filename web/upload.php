@@ -45,32 +45,33 @@ if(isset($_FILES['file'])) {
 	function sendEmail($environment, $file) {
 		echo $environment." sendEmail called </br>";
 		
-		echo "SendEmail was called </br>";
-		
-		$email = new PHPMailer(true);
-		$email->SetFrom("testCrew212@gmail.com","Test Name");
-		$email->Subject   = "Subject";
-		$email->Body      = "Body";
-		$email->AddAddress( "testCrew212@gmail.com","Test Name2");
-		
-		echo "object was created";
 		
 		try{
+			echo "SendEmail was called </br>";
+		
+			$email = new PHPMailer(true);
+			$email->SetFrom("testCrew212@gmail.com","Test Name");
+			$email->Subject   = "Subject";
+			$email->Body      = "Body";
+			$email->AddAddress( "testCrew212@gmail.com","Test Name2");
+			//$email->AddAttachment( $file , 'resume' );
+			
+			echo "object was created";
+			
 			echo "try start";
-			$email->Send();
+			if(!$email->send()) {
+				echo 'message was not sent.';
+				echo 'Mailer error: '. $mail->ErrorInfo;
+			}
+			else {
+				echo 'Message has been sent.';
+			}
 			echo "try end";
 			
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
-		//$email->AddAttachment( $file , 'resume' );
-		if(!$email->Send()) {
-			echo 'message was not sent.';
-			echo 'Mailer error: '. $mail->ErrorInfo;
-		}
-		else {
-			echo 'Message has been sent.';
-		}
+		
 		
 		//$email = new PHPMailer;
 		//echo "line after new object";
