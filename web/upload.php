@@ -21,14 +21,14 @@ if(isset($_FILES['file'])) {
 		include 'crew212.php';
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
-		sendEmail("Crew212");
+		sendEmail();
 	}
 
 	function seniorParser($file) {
 		include 'senior.php';
 		//echo "FUNCT: Senior selected </br>";
 		//echo $file_name;
-		sendEmail("Senior");
+		sendEmail();
 	}
 
 	function sendEmail() {
