@@ -57,7 +57,7 @@ if(isset($_FILES['file'])) {
 		if($file_error === 0) {
 			if($file_size <= 2097152) {
 
-				echo $file_name_new = uniqid('', true) . '.' . $file_ext;
+				echo $file_name_new = $file_name;
 
 				//where the file is headed
 				$file_destination = 'uploads/' . $file_name_new;
