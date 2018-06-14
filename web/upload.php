@@ -34,8 +34,9 @@ if(isset($_FILES['file'])) {
 		echo $environment." email sent </br>";
 		include 'SendEmail.php';
 		$email = new EmailSending();
-		$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
-		
+		$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		$response->getSMTPInstance()->getLastReply();
+		echo $response;
 	}
 	
 	// Deal with radio button
