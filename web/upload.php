@@ -1,4 +1,8 @@
 <?php 
+include 'SendEmail.php';
+//include 'senior.php';
+//include 'crew212.php';
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 if(isset($_FILES['file'])) {
@@ -22,22 +26,18 @@ if(isset($_FILES['file'])) {
 
 	// Functions
 	function crew212Parser($file) { //Need to pass in file
-		//include 'crew212.php';
 		echo $file_name;
 		sendEmail("crew212", $file);
 
 	}
 
 	function seniorParser($file) {
-		//include 'senior.php';
 		echo $file_name;
 		sendEmail("senior", $file);
 	}
 
 	function sendEmail($environment, $file) {
 		echo $environment." sendEmail called </br>";
-		include 'SendEmail.php';
-		echo "line after include";
 		$email = new EmailSending();
 		echo "line after new object";
 		$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
