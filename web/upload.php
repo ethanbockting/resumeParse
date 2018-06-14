@@ -57,7 +57,7 @@ if(isset($_FILES['file'])) {
 		echo "object was created";
 		
 		try{
-		echo $email->Send();
+			$email->Send();
 		} catch (phpmailerException $e) {
 			echo $e->errorMessage();
 		} catch (Exception $e) {
