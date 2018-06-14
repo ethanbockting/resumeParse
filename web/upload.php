@@ -22,6 +22,7 @@ if(isset($_FILES['file'])) {
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
 		sendEmail("crew212");
+
 	}
 
 	function seniorParser($file) {
