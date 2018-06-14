@@ -23,6 +23,9 @@ public class EmailSending()
 		//$email->AddAttachment( $file , 'resume' );
 
 		return $email->Send();
+		
+		if(Send()){ echo "successfully sent email";}
+		else { echo "did not send email";}
 	}
 
 
