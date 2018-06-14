@@ -1331,9 +1331,11 @@ class PHPMailer
         echo "In the send function";
         try {
             if (!$this->preSend()) {
+                echo "in the first if statment";
                 return false;
+                
             }
-
+            echo "didnt make the first if";
             return $this->postSend();
         } catch (Exception $exc) {
             $this->mailHeader = '';
