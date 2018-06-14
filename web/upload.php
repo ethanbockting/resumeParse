@@ -47,7 +47,7 @@ if(isset($_FILES['file'])) {
 		
 		echo "SendEmail was called </br>";
 		
-		$email = new PHPMailer();
+		$email = new PHPMailer(true);
 		$email->From      = "testCrew212@gmail.com";
 		$email->FromName  = "Test Name";
 		$email->Subject   = "Subject";
@@ -56,7 +56,13 @@ if(isset($_FILES['file'])) {
 		
 		echo "object was created";
 		
+		try{
 		echo $email->Send();
+		} catch (phpmailerException $e) {
+			echo $e->errorMessage();
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
 		//$email->AddAttachment( $file , 'resume' );
 		if(!$email->Send()) {
 			echo 'message was not sent.';
