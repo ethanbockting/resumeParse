@@ -21,7 +21,7 @@ if(isset($_FILES['file'])) {
 		include 'crew212.php';
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
-		sendEmail("crew212");
+		sendEmail("crew212", $file);
 
 	}
 
@@ -29,13 +29,13 @@ if(isset($_FILES['file'])) {
 		include 'senior.php';
 		//echo "FUNCT: Senior selected </br>";
 		//echo $file_name;
-		sendEmail("senior");
+		sendEmail("senior", $file);
 	}
 
-	function sendEmail($environment) {
+	function sendEmail($environment, $file) {
 		echo $environment." email sent </br>";
 		$email = new EmailSending();
-		$email->SendTestEmail();
+		$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		include 'SendEmail.php';
 		
 	}
