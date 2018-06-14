@@ -5,9 +5,9 @@ echo "SendEmail included";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMailer.php';
-require './PHPMailer/src/SMTP.php';
+require $_SERVER['DOCUMENT_ROOT'].'/web/PHPMailer/src/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'].'/web/PHPMailer/src/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'].'/web/PHPMailer/src/SMTP.php';
 
 public class EmailSending()
 {
