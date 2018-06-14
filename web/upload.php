@@ -4,6 +4,10 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 if(isset($_FILES['file'])) {
 	$file = $_FILES['file'];
 	
+	if ($file == null) {
+		echo "no file";
+	}
+	
 	// File properties
 	$file_name = $file['name'];
 	$file_tmp = $file['tmp_name'];
@@ -31,7 +35,7 @@ if(isset($_FILES['file'])) {
 	}
 
 	function sendEmail($environment, $file) {
-		//echo $environment." email sent </br>";
+		echo $environment." sendEmail called </br>";
 		include 'SendEmail.php';
 		echo "line after include";
 		$email = new EmailSending();
