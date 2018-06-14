@@ -1,7 +1,10 @@
 <?php 
-include 'SendEmail.php';
+//include 'SendEmail.php';
 //include 'senior.php';
 //include 'crew212.php';
+
+require 'PHPMailer/src/PHPMailer.php';
+
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
@@ -38,10 +41,30 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment, $file) {
 		echo $environment." sendEmail called </br>";
-		$email = new PHPMailer;
-		echo "line after new object";
-		$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
-		echo "line after call function";
+		
+		echo "SendEmail was called </br>";
+		$email = new PHPMailer();
+		$email->From      = $from;
+		$email->FromName  = $fromName;
+		$email->Subject   = $subject;
+		$email->Body      = $body;
+		$email->AddAddress( $to );
+		
+		echo "object was created";
+		
+		//$email->AddAttachment( $file , 'resume' );
+		if(!$email->send()) {
+			echo 'message was not sent.';
+			echo 'Mailer error: '. $mail->ErrorInfo;
+		}
+		else {
+			echo 'Message has been sent.';
+		}
+		
+		//$email = new PHPMailer;
+		//echo "line after new object";
+		//$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		//echo "line after call function";
 	}
 	
 	// Deal with radio button
