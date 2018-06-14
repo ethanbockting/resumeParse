@@ -35,13 +35,13 @@ if(isset($_FILES['file'])) {
 	function sendEmail($environment) {
 		echo $environment." email sent";
 		// the message
-		//$msg = "First line of text\nSecond line of text";
+		$msg = "First line of text\nSecond line of text";
 
 		// use wordwrap() if lines are longer than 70 characters
 		//$msg = wordwrap($msg,70);
 
 		// send email
-		//mail("XTopher.Hanson13@gmail.com","Resume Parser Test",$msg);
+		mail("ethanbockting123@gmail.com","My subject",$msg);
 	}
 	
 	// Deal with radio button
@@ -50,11 +50,11 @@ if(isset($_FILES['file'])) {
 		{
 			if($_POST['radio'] == "Crew212") {
 				//echo "IF: Crew212 selected </br>";
-				crew212Parser();
+				crew212Parser($file);
 			}
 			elseif($_POST['radio'] == "Senior") {
 				//echo "IF: Senior selected </br>";
-				seniorParser();
+				seniorParser($file);
 			}
 
 			//echo "Selected: ".$_POST['radio']."</br>";  //  Displaying Selected Value
