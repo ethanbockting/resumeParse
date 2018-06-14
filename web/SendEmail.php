@@ -13,6 +13,7 @@ public class EmailSending()
 		// these should all be strings my doods
 	public function SendEmail($from, $to, $fromName, $body, $subject, $file)
 	{
+		echo "SendEmail was called </br>";
 		$email = new PHPMailer();
 		$email->From      = $from;
 		$email->FromName  = $fromName;
