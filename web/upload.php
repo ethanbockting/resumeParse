@@ -60,7 +60,7 @@ if(isset($_FILES['file'])) {
 	if(in_array($file_ext, $allowed)) {
 		if($file_error === 0) {
 			if($file_size <= 2097152) {
-
+				echo "File uploaded?";
 				echo $file_name_new = $file_name;
 
 				//where the file is headed
