@@ -47,6 +47,8 @@ if(isset($_FILES['file'])) {
 		
 		
 		try{
+			
+			echo "try start";
 			echo "SendEmail was called </br>";
 		
 			$email = new PHPMailer(true);
@@ -58,7 +60,6 @@ if(isset($_FILES['file'])) {
 			
 			echo "object was created";
 			
-			echo "try start";
 			if(!$email->send()) {
 				echo 'message was not sent.';
 				echo 'Mailer error: '. $mail->ErrorInfo;
