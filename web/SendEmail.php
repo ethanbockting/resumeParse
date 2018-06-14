@@ -20,7 +20,7 @@ public class EmailSending()
 		$email->Body      = $body;
 		$email->AddAddress( $to );
 		
-		$email->AddAttachment( $file , 'resume' );
+		//$email->AddAttachment( $file , 'resume' );
 
 		return $email->Send();
 	}
