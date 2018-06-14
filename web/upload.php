@@ -3,11 +3,6 @@
 //include 'senior.php';
 //include 'crew212.php';
 
-require_once( './PHPMailer/src/PHPMailer.php');
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
@@ -33,51 +28,11 @@ if(isset($_FILES['file'])) {
 	// Functions
 	function crew212Parser($file) { //Need to pass in file
 		echo $file_name;
-		sendEmail("crew212", $file);
 
 	}
 
 	function seniorParser($file) {
 		echo $file_name;
-		sendEmail("senior", $file);
-	}
-
-	function sendEmail($environment, $file) {
-		echo $environment." sendEmail called </br>";
-		
-		
-		try{
-			
-			echo "try start";
-			echo "SendEmail was called </br>";
-		
-			$email = new PHPMailer(true);
-			$email->SetFrom("testCrew212@gmail.com","Test Name");
-			$email->Subject   = "Subject";
-			$email->Body      = "Body";
-			$email->AddAddress( "testCrew212@gmail.com","Test Name2");
-			//$email->AddAttachment( $file , 'resume' );
-			
-			echo "object was created";
-			
-			if(!$email->send()) {
-				echo 'message was not sent.';
-				echo 'Mailer error: '. $mail->ErrorInfo;
-			}
-			else {
-				echo 'Message has been sent.';
-			}
-			echo "try end";
-			
-		} catch (Exception $e) {
-			echo $e->getMessage();
-		}
-		
-		
-		//$email = new PHPMailer;
-		//echo "line after new object";
-		//$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
-		//echo "line after call function";
 	}
 	
 	// Deal with radio button
