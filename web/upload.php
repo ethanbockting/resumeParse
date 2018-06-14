@@ -38,7 +38,7 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment, $file) {
 		echo $environment." sendEmail called </br>";
-		$email = new EmailSending();
+		$email = new PHPMailer;
 		echo "line after new object";
 		$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		echo "line after call function";
