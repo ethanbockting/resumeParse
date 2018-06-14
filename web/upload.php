@@ -43,12 +43,13 @@ if(isset($_FILES['file'])) {
 		echo $environment." sendEmail called </br>";
 		
 		echo "SendEmail was called </br>";
+		
 		$email = new PHPMailer();
-		$email->From      = $from;
-		$email->FromName  = $fromName;
-		$email->Subject   = $subject;
-		$email->Body      = $body;
-		$email->AddAddress( $to );
+		$email->From      = "testCrew212@gmail.com";
+		$email->FromName  = "Test Name";
+		$email->Subject   = "Subject";
+		$email->Body      = "Body";
+		$email->AddAddress( "testCrew212@gmail.com" );
 		
 		echo "object was created";
 		
