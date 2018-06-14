@@ -34,7 +34,7 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment) {
 		echo $environment." email sent";
-		$filename = $file;
+		$filename = $file_name;
 
 		    $mailto = 'ethanbockting123@gmail.com';
 		    $subject = 'Cool Stuff';
