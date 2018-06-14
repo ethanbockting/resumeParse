@@ -34,7 +34,7 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment) {
 		echo $environment." email sent";
-		$mail=mail(ethanbockting123@gmail.com, "Subject: my Subject","cool stuff" );
+		$mail=mail("ethanbockting123@gmail.com", "Subject: my Subject","cool stuff" );
 		if($mail){
 		  echo "Thank you for using our mail form";
 		}else{
