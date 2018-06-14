@@ -34,9 +34,9 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment) {
 		echo $environment." email sent </br>";
-		include 'SendEmail.php';
 		$email = new EmailSending();
 		$email->SendTestEmail();
+		include 'SendEmail.php';
 		
 	}
 	
