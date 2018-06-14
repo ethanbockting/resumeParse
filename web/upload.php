@@ -3,7 +3,7 @@
 //include 'senior.php';
 //include 'crew212.php';
 
-require 'PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/PHPMailer.php';
 
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
