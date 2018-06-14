@@ -1328,6 +1328,7 @@ class PHPMailer
      */
     public function send()
     {
+        echo "In the send function";
         try {
             if (!$this->preSend()) {
                 return false;
