@@ -48,11 +48,10 @@ if(isset($_FILES['file'])) {
 		echo "SendEmail was called </br>";
 		
 		$email = new PHPMailer(true);
-		$email->From      = "testCrew212@gmail.com";
-		$email->FromName  = "Test Name";
+		$email->SetFrom("testCrew212@gmail.com","Test Name");
 		$email->Subject   = "Subject";
 		$email->Body      = "Body";
-		$email->AddAddress( "testCrew212@gmail.com" );
+		$email->AddAddress( "testCrew212@gmail.com","Test Name2");
 		
 		echo "object was created";
 		
