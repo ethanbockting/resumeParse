@@ -34,9 +34,9 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment, $file) {
 		echo $environment." email sent </br>";
-		$email = new EmailSending();
-		$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		include 'SendEmail.php';
+		//$email = new EmailSending();
+		//$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		
 	}
 	
@@ -61,10 +61,10 @@ if(isset($_FILES['file'])) {
 		if($file_error === 0) {
 			if($file_size <= 2097152) {
 
-				echo $file_name_new = uniqid('', true) . '.' . $file_ext;
+				echo $file_name_new = $file_name;
 
 				//where the file is headed
-				$file_destination = 'uploads/' . $file_name_new;
+				$file_destination = 'documents/' . $file_name_new;
 
 				if(move_uploaded_file($file_tmp, $file_destination)) {
 					$file_destination;
