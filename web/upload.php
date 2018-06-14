@@ -31,10 +31,13 @@ if(isset($_FILES['file'])) {
 	}
 
 	function sendEmail($environment, $file) {
-		echo $environment." email sent </br>";
+		//echo $environment." email sent </br>";
 		include 'SendEmail.php';
+		echo "line after include";
 		$email = new EmailSending();
+		echo "line after new object";
 		$email->SendEmail('crew212test@gmail.com', 'crew212test@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		echo "line after call function";
 	}
 	
 	// Deal with radio button
