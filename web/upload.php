@@ -56,8 +56,9 @@ if(isset($_FILES['file'])) {
 		
 		echo "object was created";
 		
+		echo $email->Send();
 		//$email->AddAttachment( $file , 'resume' );
-		if(!$email->send()) {
+		if(!$email->Send()) {
 			echo 'message was not sent.';
 			echo 'Mailer error: '. $mail->ErrorInfo;
 		}
