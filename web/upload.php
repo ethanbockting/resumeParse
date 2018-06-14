@@ -19,16 +19,14 @@ if(isset($_FILES['file'])) {
 	// Functions
 	function crew212Parser($file) { //Need to pass in file
 		include 'crew212.php';
-		//echo "FUNCT: Crew212 selected </br>";
-		//echo $file_name;
+		echo $file_name;
 		sendEmail("crew212", $file);
 
 	}
 
 	function seniorParser($file) {
 		include 'senior.php';
-		//echo "FUNCT: Senior selected </br>";
-		//echo $file_name;
+		echo $file_name;
 		sendEmail("senior", $file);
 	}
 
