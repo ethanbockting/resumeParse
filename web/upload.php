@@ -21,7 +21,7 @@ if(isset($_FILES['file'])) {
 		include 'crew212.php';
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
-		sendEmail("crew212");
+		sendEmail("crew212", $file);
 
 	}
 
@@ -29,19 +29,15 @@ if(isset($_FILES['file'])) {
 		include 'senior.php';
 		//echo "FUNCT: Senior selected </br>";
 		//echo $file_name;
-		sendEmail("senior");
+		sendEmail("senior", $file);
 	}
 
-	function sendEmail($environment) {
-		echo $environment." email sent";
-		// the message
-		//$msg = "First line of text\nSecond line of text";
-
-		// use wordwrap() if lines are longer than 70 characters
-		//$msg = wordwrap($msg,70);
-
-		// send email
-		//mail("XTopher.Hanson13@gmail.com","Resume Parser Test",$msg);
+	function sendEmail($environment, $file) {
+		echo $environment." email sent </br>";
+		$email = new EmailSending();
+		$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		include 'SendEmail.php';
+		
 	}
 	
 	// Deal with radio button
@@ -50,11 +46,11 @@ if(isset($_FILES['file'])) {
 		{
 			if($_POST['radio'] == "Crew212") {
 				//echo "IF: Crew212 selected </br>";
-				crew212Parser();
+				crew212Parser($file);
 			}
 			elseif($_POST['radio'] == "Senior") {
 				//echo "IF: Senior selected </br>";
-				seniorParser();
+				seniorParser($file);
 			}
 
 			//echo "Selected: ".$_POST['radio']."</br>";  //  Displaying Selected Value
