@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
+echo "SendEmail included";
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
