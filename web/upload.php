@@ -21,11 +21,25 @@ if(isset($_FILES['file'])) {
 		include 'crew212.php';
 		//echo "FUNCT: Crew212 selected </br>";
 		//echo $file_name;
+		//sendEmail("Crew212");
 	}
 
-	function seniorParser() {
-		echo "FUNCT: Senior selected </br>";
-		echo $file_name;
+	function seniorParser($file) {
+		include 'senior.php';
+		//echo "FUNCT: Senior selected </br>";
+		//echo $file_name;
+		//sendEmail("Senior");
+	}
+
+	function sendEmail() {
+		// the message
+		$msg = "First line of text\nSecond line of text";
+
+		// use wordwrap() if lines are longer than 70 characters
+		$msg = wordwrap($msg,70);
+
+		// send email
+		mail("XTopher.Hanson13@gmail.com","Resume Parser Test",$msg);
 	}
 	
 	// Deal with radio button
