@@ -74,6 +74,9 @@ if(isset($_FILES['file'])) {
 				}
 
 			}
+		    else {
+		    	echo "There was a file error";
+		    }
 		}
 	}
 	else{
