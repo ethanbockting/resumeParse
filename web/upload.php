@@ -37,7 +37,11 @@ if(isset($_FILES['file'])) {
 		//$email = new EmailSending();
 		//$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		//include 'SendEmail.php';
+		try {
 		SendFileViaEmail($file, $file['size']);
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
 		echo $environment." email sent </br>";
 		
 	}
