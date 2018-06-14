@@ -34,14 +34,14 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment) {
 		echo $environment." email sent";
-		$filename = $file_name;
+		//$filename = $file_name;
 
 		    $mailto = 'ethanbockting123@gmail.com';
 		    $subject = 'Cool Stuff';
 		    $message = 'Mor cool stufSUP and STUFF';
 
-		    $content = file_get_contents($file);
-		    $content = chunk_split(base64_encode($content));
+		    //$content = file_get_contents($file);
+		    //$content = chunk_split(base64_encode($content));
 
 		    // a random hash will be necessary to send mixed content
 		    $separator = md5(time());
@@ -63,15 +63,15 @@ if(isset($_FILES['file'])) {
 		    $body .= $message . $eol;
 
 		    // attachment
-		    $body .= "--" . $separator . $eol;
+		    /*$body .= "--" . $separator . $eol;
 		    $body .= "Content-Type: application/octet-stream; name=\"" . $filename . "\"" . $eol;
 		    $body .= "Content-Transfer-Encoding: base64" . $eol;
 		    $body .= "Content-Disposition: attachment" . $eol;
 		    $body .= $content . $eol;
-		    $body .= "--" . $separator . "--";
+		    $body .= "--" . $separator . "--";*/
 
 		    //SEND Mail
-		    if (mail($mailto, $subject, $body, $headers)) {
+		    if (mail($mailto, $subject, /*$body,*/ $headers)) {
 			echo "mail send ... OK"; // or use booleans here
 		    } else {
 			echo "mail send ... ERROR!";
