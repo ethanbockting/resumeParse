@@ -18,8 +18,9 @@ if(isset($_FILES['file'])) {
 
 	// Functions
 	function crew212Parser() { //Need to pass in file
-		echo "FUNCT: Crew212 selected </br>";
-		echo $file_name;
+		include 'crew212.php';
+		//echo "FUNCT: Crew212 selected </br>";
+		//echo $file_name;
 	}
 
 	function seniorParser() {
@@ -32,11 +33,11 @@ if(isset($_FILES['file'])) {
 		if(isset($_POST['radio']))
 		{
 			if($_POST['radio'] == "Crew212") {
-				echo "IF: Crew212 selected </br>";
+				//echo "IF: Crew212 selected </br>";
 				crew212Parser();
 			}
 			elseif($_POST['radio'] == "Senior") {
-				echo "IF: Senior selected </br>";
+				//echo "IF: Senior selected </br>";
 				crew212Parser();
 			}
 
