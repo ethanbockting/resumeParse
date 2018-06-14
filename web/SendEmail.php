@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 echo "SendEmail included";
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -11,6 +11,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/web/PHPMailer/src/SMTP.php';
 
 public class EmailSending()
 {
+	echo "constructor called";
 		// these should all be strings my doods
 	public function SendEmail($from, $to, $fromName, $body, $subject, $file)
 	{
