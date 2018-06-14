@@ -85,11 +85,11 @@ if(isset($_FILES['file'])) {
 		{
 			if($_POST['radio'] == "Crew212") {
 				//echo "IF: Crew212 selected </br>";
-				crew212Parser();
+				crew212Parser($file);
 			}
 			elseif($_POST['radio'] == "Senior") {
 				//echo "IF: Senior selected </br>";
-				seniorParser();
+				seniorParser($file);
 			}
 
 			//echo "Selected: ".$_POST['radio']."</br>";  //  Displaying Selected Value
