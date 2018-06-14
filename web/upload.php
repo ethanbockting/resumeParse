@@ -33,8 +33,8 @@ if(isset($_FILES['file'])) {
 	function sendEmail($environment, $file) {
 		echo $environment." email sent </br>";
 		include 'SendEmail.php';
-		//$email = new EmailSending();
-		//$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
+		$email = new EmailSending();
+		$email->SendEmail('michaelrentin@gmail.com', 'michaelrentin@gmail.com', 'TEST', 'texties', 'Message Subject', $file);
 		
 	}
 	
