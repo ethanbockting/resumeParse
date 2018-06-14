@@ -60,8 +60,6 @@ if(isset($_FILES['file'])) {
 			$email->Send();
 			echo "try end";
 			
-		} catch (phpmailerException $e) {
-			echo $e->errorMessage();
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
