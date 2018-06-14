@@ -34,14 +34,12 @@ if(isset($_FILES['file'])) {
 
 	function sendEmail($environment) {
 		echo $environment." email sent";
-		// the message
-		$msg = "First line of text\nSecond line of text";
-
-		// use wordwrap() if lines are longer than 70 characters
-		//$msg = wordwrap($msg,70);
-
-		// send email
-		mail("ethanbockting123@gmail.com","My subject",$msg);
+		$mail=mail(ethanbockting123@gmail.com, "Subject: my Subject","cool stuff" );
+		if($mail){
+		  echo "Thank you for using our mail form";
+		}else{
+		  echo "Mail sending failed."; 
+		}
 	}
 	
 	// Deal with radio button
